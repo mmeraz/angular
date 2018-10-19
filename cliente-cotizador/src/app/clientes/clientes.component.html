@@ -1,0 +1,68 @@
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido paterno</th>
+      <th scope="col">Apellido materno</th>
+      <th scope="col">Email</th>
+      <th scope="col">Fecha nacimiento</th>
+      <th scope="col">celular</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of arrayCustomers">
+      <th scope="row">{{c.idCliente}}</th>
+      <td>{{c.nombreCliente}}</td>
+      <td>{{c.apellidoPatCliente}}</td>
+      <td>{{c.apellidoMatCliente}}</td>
+      <td>{{c.emailCliente}}</td>
+      <td>{{c.fnacCliente}}</td>
+      <td>{{c.celCliente}}</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+<div class="container">
+<form role="form"
+#f= "ngForm"
+(ngSubmit)="onSubmit(f)">
+  <div class="form-group">
+    <input type="text" class="form-control" id="nombreCliente" name="nombreCliente"  placeholder="Nombre"
+    ngModel
+    required>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="apellidoPatCliente" name="apellidoPatCliente" placeholder="Apellido paterno"
+    ngModel
+    required>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="apellidoMatCliente" name="apellidoMatCliente"  placeholder="Apellido Materno"
+    ngModel
+    required>
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" id="emailCliente" name="emailCliente" placeholder="email"
+    ngModel
+    required>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="fnacCliente" name="fnacCliente" placeholder="Fecha nacimiento"
+    ngModel
+    required>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="celCliente" name="celCliente" placeholder="celular"
+    ngModel
+    required>
+  </div>
+  <button type="submit" class="btn btn-primary">Registrar</button>
+</form>
+
+</div>
